@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  position: relative; /* Allows absolute positioning inside it */
+}
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.burger-icon {
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 12px;
+}
+
+nav {
+  display: none;
+  /* visibility: hidden; */
+  padding-top: 15px;
+}
+nav a {
+  display: block;
+  color: white;
+  padding: 10px 0;
+  text-decoration: none;
+  border-bottom: 1px solid #444;
+}
+
+#menu-toggle:checked ~ nav {
+  /* The tilde (~) is the general sibling combinator.
+     It selects any <nav> element that is a sibling of
+     #menu-toggle  When the checkbox is
+     checked, the sibling <nav> will be shown. */
+  display: block;
+}
+
+main {
+  padding: 1.5rem;
+}
+.box {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+/* --- Desktop Styles (Screens 768px and wider) --- */
+@media screen and (min-width: 768px) {
+  .burger-icon {
+    display: none; /* Hide burger icon */
+  }
+
+  nav {
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    padding-top: 0;
+  }
+
+  nav a {
+    display: inline-block;
+    padding: 0 15px;
+    border-bottom: none;
+  }
+
+  .box {
+    display: inline-block;
+    width: 32%;
+  }
+}
